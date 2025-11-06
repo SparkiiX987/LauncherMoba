@@ -1,22 +1,13 @@
 #include <SFML/Audio.hpp>
-#include <SFML/Graphics.hpp>
+#include "Window.h"
 
 int main()
 {
-    sf::RenderWindow window(sf::VideoMode({ 800, 600 }), "SFML window");
+    Window* mainWindow = new Window(sf::VideoMode({ 800, 600 }), "MOBA Launcher");
 
-    while (window.isOpen())
-    {
-        while (const std::optional event = window.pollEvent())
-        {
-            if (event->is<sf::Event::Closed>())
-                window.close();
-        }
+    mainWindow->ExecuteWindow();
 
-        window.clear();
-
-        window.display();
-    }
+    delete mainWindow;
 
     return 0;
 }
