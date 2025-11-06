@@ -1,6 +1,22 @@
-#include <iostream>
+#include <SFML/Audio.hpp>
+#include <SFML/Graphics.hpp>
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    sf::RenderWindow window(sf::VideoMode({ 800, 600 }), "SFML window");
+
+    while (window.isOpen())
+    {
+        while (const std::optional event = window.pollEvent())
+        {
+            if (event->is<sf::Event::Closed>())
+                window.close();
+        }
+
+        window.clear();
+
+        window.display();
+    }
+
+    return 0;
 }
