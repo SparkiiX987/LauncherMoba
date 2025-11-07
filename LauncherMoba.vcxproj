@@ -127,12 +127,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="DrawingSystem.cpp" />
     <ClCompile Include="LauncherMoba.cpp" />
     <ClCompile Include="TexturesManager.cpp" />
     <ClCompile Include="VisualObject.cpp" />
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="DrawingSystem.h" />
     <ClInclude Include="TexturesManager.h" />
     <ClInclude Include="VisualObject.h" />
     <ClInclude Include="Window.h" />

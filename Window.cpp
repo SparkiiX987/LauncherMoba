@@ -1,4 +1,5 @@
 #include "Window.h"
+#include "DrawingSystem.h"
 
 Window::Window(sf::VideoMode _videoMode, std::string _windowName) : window(new sf::RenderWindow(_videoMode, _windowName))
 {
@@ -13,7 +14,11 @@ void Window::ExecuteWindow()
 {
     TexturesManager textureManager;
     textureManager.CreateNewTexture("testTexture", "Textures\\TestTexture.png");
+    DrawingSystem drawingSystem;
     VisualObject testObject(textureManager.GetTexture("testTexture"));
+
+    std::vector<VisualObject*> visualObjects;
+    visualObjects.push_back(&testObject);
 
     while (window->isOpen())
     {
@@ -24,7 +29,7 @@ void Window::ExecuteWindow()
         }
 
         window->clear();
-        window->draw(*testObject.GetSprite());
+        drawingSystem.DrawObjects(window, &visualObjects);
         window->display();
     }
 }
