@@ -128,10 +128,17 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="LauncherMoba.cpp" />
+    <ClCompile Include="TexturesManager.cpp" />
+    <ClCompile Include="VisualObject.cpp" />
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="TexturesManager.h" />
+    <ClInclude Include="VisualObject.h" />
     <ClInclude Include="Window.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Textures\TestTexture.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

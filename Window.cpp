@@ -11,6 +11,10 @@ Window::~Window()
 
 void Window::ExecuteWindow()
 {
+    TexturesManager textureManager;
+    textureManager.CreateNewTexture("testTexture", "Textures\\TestTexture.png");
+    VisualObject testObject(textureManager.GetTexture("testTexture"));
+
     while (window->isOpen())
     {
         while (const std::optional event = window->pollEvent())
@@ -20,7 +24,7 @@ void Window::ExecuteWindow()
         }
 
         window->clear();
-
+        window->draw(*testObject.GetSprite());
         window->display();
     }
 }

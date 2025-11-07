@@ -1,5 +1,5 @@
 #pragma once
-#include <SFML/Graphics.hpp>
+#include "VisualObject.h"
 
 class Window
 {
@@ -14,4 +14,6 @@ public:
 
 private:
 	sf::RenderWindow* window;
+
+	std::vector<VisualObject> visualObjects;
 };
