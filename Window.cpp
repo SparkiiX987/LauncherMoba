@@ -16,6 +16,7 @@ void Window::ExecuteWindow()
     textureManager.CreateNewTexture("testTexture", "Textures\\TestTexture.png");
     DrawingSystem drawingSystem;
     VisualObject testObject(textureManager.GetTexture("testTexture"));
+    testObject.SetPosition(50, 50);
 
     std::vector<VisualObject*> visualObjects;
     visualObjects.push_back(&testObject);

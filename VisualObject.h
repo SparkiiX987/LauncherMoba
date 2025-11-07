@@ -5,18 +5,18 @@ class VisualObject
 {
 public:
 	VisualObject(sf::Texture* _texture);
-	VisualObject(sf::Texture* _texture, sf::Vector2i _position);
-	VisualObject(sf::Texture* _texture, int _posX, int _posY);
+	VisualObject(sf::Texture* _texture, sf::Vector2f _position);
+	VisualObject(sf::Texture* _texture, float _posX, float _posY);
 
 	const sf::Sprite* GetSprite() const;
-	const sf::Vector2i* GetPosition() const;
+	const sf::Vector2f* GetPosition() const;
 
-	void SetPosition(int _newPosX, int _newPosY);
-	void SetPosition(sf::Vector2i _newPos);
+	void SetPosition(float _newPosX, float _newPosY);
+	void SetPosition(sf::Vector2f _newPos);
 
 	void SetTexture(sf::Texture* _texture);
 
 private:
 	sf::Sprite* sprite;
-	sf::Vector2i* position;
+	sf::Vector2f* position;
 };
